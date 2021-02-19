@@ -11,8 +11,8 @@ here is my snippet of code used for data inspection
 By inspecting this file I learned that:
 
 1. testing
-2. testing the editing by VSD 
-3. point 3
+2. testing the editing by VSC
+3. Start doing HW tomorrow
 
 or
 
