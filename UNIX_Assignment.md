@@ -16,7 +16,7 @@ $ tail fang_et_al_genotypes.txt | awk -F "\t" '{print NF; exit}'
 
 By inspecting this file I learned that:
 
-1. At the first of the file, it would be the names of the genes/makers, and I press j to to down the line at a time, then find the following is the nucletides genotype. 
+1. At the first of the file, it would be the names of the genes/makers, and I press j to down the lines at a time, then find the following is the nucletides genotype. 
 2. There are 2783 lines in this 11 Mb file. 
 3. Using cut command to have a glimpse of the file by columns, find out the first three columns are the Sample ID, JG_OTU, and Group. Also, if use column command, it would be easier to read by columns.
 4. Using awk command to find out how many columns. There are 986 columns in this file. Also, it doesn't have # headers, so head/tail command has the same results.
