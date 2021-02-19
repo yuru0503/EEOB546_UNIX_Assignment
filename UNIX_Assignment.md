@@ -5,14 +5,22 @@
 ### Attributes of `fang_et_al_genotypes`
 
 ```
-here is my snippet of code used for data inspection
+$ less fang_et_al_genotypes.txt
+$ wc -l fang_et_al_genotypes.txt
+$ ls -lh fang_et_al_genotypes.txt
+$ cut -f1-8 fang_et_al_genotypes.txt | head -n 3
+$ cut -f1-8 fang_et_al_genotypes.txt | column -t | head -n 3
+$ tail fang_et_al_genotypes.txt | awk -F "\t" '{print NF; exit}'
+
 ```
 
 By inspecting this file I learned that:
 
-1. testing
-2. testing the editing by VSC
-3. Start doing HW tomorrow
+1. At the first of the file, it would be the names of the genes/makers, and I press j to to down the line at a time, then find the following is the nucletides genotype. 
+2. There are 2783 lines in this 11 Mb file. 
+3. Using cut command to have a glimpse of the file by columns, find out the first three columns are the Sample ID, JG_OTU, and Group. Also, if use column command, it would be easier to read by columns.
+4. Using awk command to find out how many columns. There are 986 columns in this file. Also, it doesn't have strange headers, so head/tail command has the same results.
+5. 
 
 or
 
