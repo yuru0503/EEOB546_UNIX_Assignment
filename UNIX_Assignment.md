@@ -68,7 +68,7 @@ $ sed 's/Sample_ID/SNP_ID/' teosinte_genotype.txt | sort -k1,1 > teosinte_sgenot
 $ join -1 1 -2 1 -t $'\t' snp_infor.txt maize_sgenotype.txt > maize_joint.txt
 $ join -1 1 -2 1 -t $'\t' snp_infor.txt teosinte_sgenotype.txt > teosinte_joint.txt
 ```
-* `join` command is to combine the 1st column of `snp_infor.txt` and the 1st column of `maize_sgenotype.txt`.
+* `join` command is to combine the 1st column of `snp_infor.txt` and the 1st column of `maize_sgenotype.txt`, `-t $'\t'` option is to use tab as field seperator.
 * Do the same coding for the teosinte data as well.
 
 
