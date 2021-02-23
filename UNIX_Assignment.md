@@ -48,13 +48,21 @@ By inspecting this file I learned that:
 
 ## Data Processing
 
+### Spliting origanal data to maize and teosinte Data
 ```
 $ cut -f 1,3,4 snp_position.txt | sort -k1,1 > snp_infor.txt
 $ grep -E "(ZMMIL|ZMMLR|ZMMMR|Group)" fang_et_al_genotypes.txt | cut -f 1,4-986 |awk -f transpose.awk  > maize_genotype.txt
 $ sed 's/Sample_ID/SNP_ID/' maize_genotype.txt | sort –k1,1 > maize_sgenotype.txt
+$ grep -E "(ZMPBA|ZMPIL|ZMPJA|Group)" fang_et_al_genotypes.txt | cut -f 1,4-986 |awk -f transpose.awk > teosinte_genotype.txt  
+$ sed 's/Sample_ID/SNP_ID/' teosinte_genotype.txt | sort -k1,1 > teosinte_sgenotype.txt
+```
+### Combind genotype data with SNP information data
 
 ```
+$ join -1 1 -2 1 -t $'\t' snp_infor.txt maize_sgenotype.txt > maize_joint.txt
+join -1 1 -2 1 -t $'\t' snp_infor.txt teosinte_sgenotype.txt > teosinte_joint.txt
 
+```
 
 ### Maize Data
 
