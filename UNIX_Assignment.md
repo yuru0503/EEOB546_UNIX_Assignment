@@ -56,13 +56,21 @@ $ sed 's/Sample_ID/SNP_ID/' maize_genotype.txt | sort –k1,1 > maize_sgenotype.
 $ grep -E "(ZMPBA|ZMPIL|ZMPJA|Group)" fang_et_al_genotypes.txt | cut -f 1,4-986 |awk -f transpose.awk > teosinte_genotype.txt  
 $ sed 's/Sample_ID/SNP_ID/' teosinte_genotype.txt | sort -k1,1 > teosinte_sgenotype.txt
 ```
+* `cut` command is to extract the column we need and 'sort' by first column to be a new SNP information file.
+* `grep` command is to search for the certain names of the maize types in the group, then `cut` their ID and genotypes, then use the tranpose.awk function to transpose the file, and then to save as `maize_genotype.txt` file.
+* `sed` command is to change the header in genotype file to the same with SNP file, then `sort` it by the 1st column to save as `maize_sgenotype.txt` file, so that we can join them later.
+* Do the same coding for the teosinte data as well. 
+
 
 ### Combind genotype data with SNP information data
 
 ```
 $ join -1 1 -2 1 -t $'\t' snp_infor.txt maize_sgenotype.txt > maize_joint.txt
-join -1 1 -2 1 -t $'\t' snp_infor.txt teosinte_sgenotype.txt > teosinte_joint.txt
+$ join -1 1 -2 1 -t $'\t' snp_infor.txt teosinte_sgenotype.txt > teosinte_joint.txt
 ```
+* `join` command is to combine the 1st column of `snp_infor.txt` and the 1st column of `maize_sgenotype.txt`.
+* Do the same coding for the teosinte data as well.
+
 
 ### Maize Data
 
@@ -102,9 +110,5 @@ $ mv SNP_increase_maize* SNP_decrease_maize* maize_m* maize_u* Maize_data/
 $ mv SNP_increase_teosinte* SNP_decrease_teosinte* teosinte_m* teosinte_u* Teosinte_data/
 $ mkdir Processed_file
 $ mv maize* teosinte* Processed_file/
-
-
-
-
 
 ```
