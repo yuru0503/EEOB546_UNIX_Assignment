@@ -99,6 +99,11 @@ Here is my brief description of what this code does
 ```
 $ mkdir Maize_data Teosinte_data
 $ mv SNP_increase_maize* SNP_decrease_maize* maize_m* maize_u* Maize_data/
+$ mv SNP_increase_teosinte* SNP_decrease_teosinte* teosinte_m* teosinte_u* Teosinte_data/
+$ mkdir Processed_file
+$ mv maize* teosinte* Processed_file/
+
+
 
 
 
