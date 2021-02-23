@@ -70,6 +70,9 @@ join -1 1 -2 1 -t $'\t' snp_infor.txt teosinte_sgenotype.txt > teosinte_joint.tx
 $ for i in {1..10} ; do (awk '$1 ~ /SNP/' maize_joint.txt && awk '$2 == '$i'&& $3 != "multiple"' maize_joint.txt) > maize_chr$i.txt ; done
 $ (awk '$1 ~ /SNP/' maize_joint.txt && awk '$3 == "unknown"' maize_joint.txt )> maize_unknown.txt
 $ (awk '$1 ~ /SNP/' maize_joint.txt && awk '$2 == "multiple" || $3 == "multiple"' maize_joint.txt )> maize_multiple.txt
+$ for i in {1..10}; do (head -n 1 maize_chr$i.txt && tail -n +2 maize_chr$i.txt | sort -k3,3n )> SNP_increase_maize_chr$i.txt ; done
+$ for i in {1..10}; do (head -n 1 maize_chr$i.txt && tail -n +2 maize_chr$i.txt | sort -k3r,3n ) | sed 's/?/-/g' > SNP_decrease_maize_chr$i.txt ; done
+
 ```
 
 Here is my brief description of what this code does
@@ -81,6 +84,22 @@ Here is my brief description of what this code does
 $ for i in {1..10} ; do (awk '$1 ~ /SNP/' teosinte_joint.txt && awk '$2 == '$i' && $3 != "multiple"' teosinte_joint.txt) > teosinte_chr$i.txt ; done
 $ (awk '$1 ~ /SNP/' teosinte_joint.txt && awk '$3 == "unknown"' teosinte_joint.txt )> teosinte_unknown.txt
 $ (awk '$1 ~ /SNP/' teosinte_joint.txt && awk '$2 == "multiple" || $3 == "multiple" ' teosinte_joint.txt) > teosinte_multiple.txt
+$ for i in {1..10}; do (head -n 1 teosinte_chr$i.txt && tail -n +2 teosinte_chr$i.txt | sort -k3,3n )> SNP_increase_teosinte_chr$i.txt ; done
+$ for i in {1..10}; do (head -n 1 teosinte_chr$i.txt && tail -n +2 teosinte_chr$i.txt | sort -k3r,3n ) | sed 's/?/-/g' > SNP_decrease_teosinte_chr$i.txt ; done
+
+
 ```
 
 Here is my brief description of what this code does
+
+
+
+### Genotype folders for maize and teosinte data
+
+```
+$ mkdir Maize_data Teosinte_data
+$ mv SNP_increase_maize* SNP_decrease_maize* maize_m* maize_u* Maize_data/
+
+
+
+```
