@@ -1,4 +1,3 @@
-# EEOB546_UNIX_Assignment
 # UNIX Assignment
 
 ## Data Inspection
