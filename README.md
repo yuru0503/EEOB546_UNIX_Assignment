@@ -102,7 +102,7 @@ $ for i in {1..10}; do (head -n 1 teosinte_chr$i.txt && tail -n +2 teosinte_chr$
 
 ```
 
-* AS it has been divided the genotype data processed into two `maize_joint.txt` and `teosinte_joint.txt` file. Therefore, it did the same command lines for `teosinte_joint.txt` to 22 files in according to the SNP postion in the each of chromosome.  
+* As it has been divided the genotype data processed into two `maize_joint.txt` and `teosinte_joint.txt` file. Therefore, it did the same command lines for `teosinte_joint.txt` to 22 files in according to the SNP postion in the each of chromosomes.  
 
 
 
