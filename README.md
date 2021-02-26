@@ -86,7 +86,7 @@ $ for i in {1..10}; do (head -n 1 maize_chr$i.txt && tail -n +2 maize_chr$i.txt 
 * `for` command is to have a loop for 10 chromosomes, and then new file saved as maize_chr$i.txt , in which i is the number of chromosome.
 * `awk` command is to print out SNP and then print out the records which feature pattern that field 2 is the same with value of i but without multiple in field 3 for each of chromosomes.
 * Using `awk` to extract the specific pattern of unknown and multiple position markers to save as two new files as well.
-* Using `for` to get a loop to `sort` SNP position in each of chromosomes. 
+* Using `for` to get a loop to `sort` SNP position in each of chromosomes, which `k3r` option is to have decreasing order in column3. 
 
 
 
@@ -102,7 +102,7 @@ $ for i in {1..10}; do (head -n 1 teosinte_chr$i.txt && tail -n +2 teosinte_chr$
 
 ```
 
-* As it has been divided the genotype data processed into two `maize_joint.txt` and `teosinte_joint.txt` file. Therefore, it did the same command lines for `teosinte_joint.txt` to 22 files in according to the SNP postion in the each of chromosomes.  
+* As it has been divided the genotype data processed into two `maize_joint.txt` and `teosinte_joint.txt` file. Therefore, it did the same command lines for `teosinte_joint.txt` to 22 files in according to the SNP position in the each of chromosomes.  
 
 
 
